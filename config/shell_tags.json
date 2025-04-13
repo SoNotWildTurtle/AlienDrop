@@ -1,0 +1,83 @@
+{
+
+  "autodeployed": {
+
+    "description": "Dropped automatically via recon/exploit loop",
+
+    "color": "#5e72e4",
+
+    "type": "system"
+
+  },
+
+  "passive": {
+
+    "description": "No post-drop tasking, shell retained quietly",
+
+    "color": "#adb5bd",
+
+    "type": "attitude"
+
+  },
+
+  "monitor": {
+
+    "description": "Passive + recon/route tasks",
+
+    "color": "#17a2b8",
+
+    "type": "attitude"
+
+  },
+
+  "aggressive": {
+
+    "description": "C2, botnet propagation, persistence enabled",
+
+    "color": "#e74c3c",
+
+    "type": "attitude"
+
+  },
+
+  "relay": {
+
+    "description": "Used for command relay or CDN fetch proxy",
+
+    "color": "#6f42c1",
+
+    "type": "function"
+
+  },
+
+  "client": {
+
+    "description": "Transferred to a client dashboard",
+
+    "color": "#20c997",
+
+    "type": "ownership"
+
+  },
+
+  "burnable": {
+
+    "description": "Can be purged via burn command",
+
+    "color": "#f39c12",
+
+    "type": "control"
+
+  },
+
+  "watch": {
+
+    "description": "Under observation, not yet actioned",
+
+    "color": "#ffc107",
+
+    "type": "manual"
+
+  }
+
+}

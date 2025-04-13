@@ -1,0 +1,4 @@
+requests==2.26.0
+cryptography==3.4.7
+psutil==5.8.0
+flask==2.1.0

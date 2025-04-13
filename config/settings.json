@@ -1,0 +1,25 @@
+{
+
+  "operator_name": "Minc",
+
+  "default_attitude": "passive",
+
+  "default_modules": ["reverse_shell"],
+
+  "enable_dns_fallback": true,
+
+  "enable_persistence_monitoring": true,
+
+  "log_shell_metadata": true,
+
+  "default_tags": ["autodeployed"],
+
+  "memory_only_mode": true,
+
+  "shell_retention_policy": "manual",  // "manual" or "expire"
+
+  "report_on_drop": true,
+
+  "drop_timeout_seconds": 30
+
+}

